@@ -6,7 +6,7 @@
 /*   By: mkhairou <mkhairou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 11:12:19 by mkhairou          #+#    #+#             */
-/*   Updated: 2023/07/11 15:59:32 by mkhairou         ###   ########.fr       */
+/*   Updated: 2023/07/13 14:52:07 by mkhairou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ Dog &Dog::operator=(const Dog &copy)
 {
 	std::cout << "Dog assignation operator called" << std::endl;
 	this->_type = copy._type;
-	this->_brain = copy._brain;
+	this->_brain = new Brain();
+	*this->_brain = *(copy._brain);
 	return (*this);
 }
 

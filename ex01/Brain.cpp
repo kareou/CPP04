@@ -6,7 +6,7 @@
 /*   By: mkhairou <mkhairou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 18:35:01 by mkhairou          #+#    #+#             */
-/*   Updated: 2023/07/09 18:36:04 by mkhairou         ###   ########.fr       */
+/*   Updated: 2023/07/13 14:26:26 by mkhairou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 Brain::Brain()
 {
 	std::cout << "Brain constructor called" << std::endl;
+	for (int i = 0; i < 100; i++)
+		this->_ideas[i] = "idea";
 }
 
 Brain::Brain(Brain const &src)

@@ -6,7 +6,7 @@
 /*   By: mkhairou <mkhairou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 11:06:03 by mkhairou          #+#    #+#             */
-/*   Updated: 2023/07/09 22:07:50 by mkhairou         ###   ########.fr       */
+/*   Updated: 2023/07/13 14:37:38 by mkhairou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,11 @@
 
 int main()
 {
-	const Animal* meta[4];
+	const Animal* meta = new Cat();
 
-	for(int i = 0; i++ < 4;)
-	{
-		if (i % 2)
-			meta[i] = new Dog();
-		else
-			meta[i] = new Cat();
-	}
-	for(int i = 0; i++ < 4;)
-	{
-		delete meta[i];
-	}
+	std::cout << meta->getType() << " " << std::endl;
+	std::cout << meta->getType() << " " << std::endl;
+	meta->makeSound();
+	delete meta;
 	return 0;
 }

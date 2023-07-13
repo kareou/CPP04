@@ -6,7 +6,7 @@
 /*   By: mkhairou <mkhairou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 11:06:08 by mkhairou          #+#    #+#             */
-/*   Updated: 2023/07/11 15:31:27 by mkhairou         ###   ########.fr       */
+/*   Updated: 2023/07/13 13:00:18 by mkhairou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ class Animal
 protected:
 	std::string type;
 public:
-	Animal();
-	Animal(const Animal &cpy);
-	Animal &operator=(const Animal &copu);
-	~Animal();
-	std::string getType() const;
-	void makeSound() const;
+	Animal(void);
+	Animal(std::string type);
+	Animal(Animal const &src);
+	virtual ~Animal(void);
+	Animal &operator=(Animal const &src);
+	std::string getType(void) const;
+	virtual void makeSound(void) const;
 };
 
 
