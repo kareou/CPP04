@@ -11,26 +11,28 @@
 /* ************************************************************************** */
 
 #ifndef CHARACTER_HPP
-# define CHARACTER_HPP
+#define CHARACTER_HPP
 
-# include "ICharacter.hpp"
+#include "ICharacter.hpp"
+#include <iostream>
+#include "AMateria.hpp"
 
 class Character : public ICharacter
 {
-	private:
-		std::string _name;
-		AMateria *_inventory[4];
-		int _count;
-	public:
-		Character();
-		Character(std::string name);
-		Character(Character const &cpy);
-		Character &operator=(Character const &cpy);
-		virtual ~Character();
-		virtual std::string const &getName() const;
-		virtual void equip(AMateria *mater);
-		virtual void unequip(int idx);
-		virtual void use(int idx, ICharacter &target);
-}
+    protected:
+        std::string     _name;
+        AMateria*       _inventory[4];
+		int             _count;
+    public:
+        Character(const Character &copy); //canonical
+        Character(std::string   _name);
+        Character(); //canonical
+        std::string const & getName()   const;
+        ~Character(); //canonical
+        Character&   operator=(const Character &to_assign); //canonical
+        void    equip(AMateria* m);
+        void    unequip(int idx);
+        void    use(int idx, ICharacter& target);
+};
 
 #endif
